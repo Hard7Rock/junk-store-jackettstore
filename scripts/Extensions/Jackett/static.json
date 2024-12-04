@@ -1,1 +1,365 @@
+{
+  "junk-store-actions": {
+    "Type": "ActionSet",
+    "Content": {
+      "SetName": "JunkStoreActions",
+      "Actions": [
+        {
+          "Id": "GetJackettActions",
+          "Title": "Get jackett store actions",
+          "Type": "Init",
+          "Command": "./scripts/get-json.py jackett-actions"
+        },
+        {
+          "Id": "GetContent",
+          "Title": "Get content",
+          "Type": "TabPage",
+          "Command": "./scripts/get-json.py junk-store-tabs"
+        }
+      ]
+    }
+  },
+  "junk-store-actions-no-tabs": {
+    "Type": "ActiionSet",
+    "Content": {
+      "SetName": "JunkStoreActionsNoTabs",
+      "Actions": [
+        {
+          "Id": "GetJackettActions",
+          "Title": "Get Jorrent store actions",
+          "Type": "Init",
+          "Command": "./scripts/get-json.py jackett-actions"
+        },
+        {
+          "Id": "GetContent",
+          "Title": "Get content",
+          "Type": "TabPage",
+          "Command": "./scripts/junk-store.sh Jackett getgames"
+        },
+        {
+          "Id": "GetLoginActions",
+          "Title": "Get login status",
+          "Type": "Init",
+          "Command": "./scripts/get-json.py jackett-login-actions"
+        }
+      ]
+    }
+  },
+  "main-menu-actions": {
+    "Type": "ActionSet",
+    "Content": {
+      "SetName": "MainMenu",
+      "Actions": [
+        {
+          "Id": "JunkStoreInit",
+          "Title": "Content",
+          "Type": "Init",
+          "Command": "./scripts/get-json.py junk-store-actions"
+        },
+        {
+          "Id": "JunkStoreInitNoTabs",
+          "Title": "Content",
+          "Type": "Init",
+          "Command": "./scripts/get-json.py junk-store-actions-no-tabs"
+        },
+        {
+          "Id": "GetJackettActions",
+          "Title": "Get Jackett store actions",
+          "Type": "Init",
+          "Command": "./scripts/get-json.py jackett-actions"
+        }
+      ]
+    }
+  },
+  "junk-store-tabs": {
+    "Type": "StoreTabs",
+    "Content": {
+      "Tabs": [
+        { "Title": "Jackett", "Type": "GameGrid", "ActionId": "GetJackettActions"}
+      ]
+    }
+  },
+  "jackett-login-actions": {
+    "Type": "ActionSet",
+    "Content": {
+      "SetName": "JackettLoginActions",
+      "Actions": [
+        {
+          "Id": "Login",
+          "Title": "Login",
+          "Type": "Login",
+          "Command": "./scripts/junk-store.sh Jackett login"
+        },
+        {
+          "Id": "LoginLaunchOptions",
+          "Title": "Login",
+          "Type": "Login",
+          "Command": "./scripts/junk-store.sh Jackett login-launch-options"
+        },
+        {
+          "Id": "Logout",
+          "Title": "Logout",
+          "Type": "Logout",
+          "Command": "./scripts/junk-store.sh Jackett logout"
+        },
+        {
+          "Id": "GetContent",
+          "Title": "Status",
+          "Type": "Status",
+          "Command": "./scripts/junk-store.sh Jackett loginstatus"
+        },
+        {
+          "Id": "GetSetting",
+          "Title": "Get settings",
+          "Type": "GetSettings",
+          "Command": "./scripts/junk-store.sh Jackett getsetting"
+        },
+        {
+          "Id": "SaveSetting",
+          "Title": "Set settings",
+          "Type": "SaveSettings",
+          "Command": "./scripts/junk-store.sh Jackett savesetting"
+        }
+      ]
+    }
+  },
+  "jackett-menu-script-actions": {
+    "Type": "ScriptSet",
+    "Content": {
+      "Actions": [
+        {
+          "ActionId": "Update",
+          "Title": "Update Game",
+          "Type": "ScriptAction",
+          "InstalledOnly": "True"
+        },
+        {
+          "ActionId": "Verify",
+          "Title": "Verify Game",
+          "Type": "ScriptAction",
+          "InstalledOnly": "True"
+        },
+        {
+          "ActionId": "ProtonTricks",
+          "Title": "Proton Tricks",
+          "Type": "ScriptAction",
+          "InstalledOnly": "True"
+        }
+      ]
+    }
+  },
+  "jackett-script-actions": {
+    "Type": "ScriptSet",
+    "Content": {
+      "Actions": [
+        {
+          "ActionId": "Refresh",
+          "Title": "Refresh Games List",
+          "Type": "ScriptAction",
+          "InstalledOnly": "False"
+        }
+      ]
+    }
+  },
+  "epic-exe-actions": {
+    "Type": "ActionSet",
+    "Content": {
+      "SetName": "EpicExeActions",
+      "Actions": [
+        {
+          "Id": "RunBinary",
+          "Title": "Run executable in game folder",
+          "Type": "ScriptAction",
+          "Command": "./scripts/junk-store.sh Epic run-exe"
+        },
+        {
+          "Id": "GetContent",
+          "Title": "Get executable list",
+          "Type": "Content",
+          "Command": "./scripts/junk-store.sh Epic get-exe-list"
+        }
+      ]
+    }
+  },
+  "jackett-config-actions": {
+    "Type": "ActionSet",
+    "Content": {
+      "SetName": "JackettPlatformConfigFileActions",
+      "Actions": [
+        {
+          "Id": "GetContent",
+          "Title": "Get the ini files as json",
+          "Type": "IniEditor",
+          "Command": "./scripts/junk-store.sh Jackett getplatformconfig"
+        },
+        {
+          "Id": "SaveContent",
+          "Title": "Save the ini files as json",
+          "Type": "IniEditor",
+          "Command": "./scripts/junk-store.sh Jackett saveplatformconfig"
+        }
+      ]
+    }
+  },
+  "jackett-tab-config-actions": {
+    "Type": "ActionSet",
+    "Content": {
+      "SetName": "JackettTabConfigEditor",
+      "Actions": [
+        {
+          "Id": "GetContent",
+          "Title": "Get the ini files as json",
+          "Type": "IniEditor",
+          "Command": "./scripts/junk-store.sh Jackett gettabconfig"
+        },
+        {
+          "Id": "SaveContent",
+          "Title": "Save the ini files as json",
+          "Type": "IniEditor",
+          "Command": "./scripts/junk-store.sh Jackett savetabconfig"
+        }
+      ]
+    }
+  },
+  "jackett-actions": {
+    "Type": "ActionSet",
+    "Content": {
+      "SetName": "JackettActions",
+      "Actions": [
+        {
+          "Id": "GetContent",
+          "Title": "Get Jackett games list",
+          "Type": "GameGrid",
+          "Command": "./scripts/junk-store.sh Jackett getgames"
+        },
+        {
+          "Id": "GetGameSize",
+          "Title": "Get game size",
+          "Type": "GameSize",
+          "Command": "./scripts/junk-store.sh Jackett getgamesize"
+        },
+        {
+          "Id": "GetDetails",
+          "Title": "Get game details",
+          "Type": "GameDetails",
+          "Command": "./scripts/junk-store.sh Jackett getgamedetails"
+        },
+        {
+          "Id": "GetJsonImages",
+          "Title": "Get game images as json",
+          "Type": "GameImages",
+          "Command": "./scripts/junk-store.sh Jackett getjsonimages"
+        },
+        {
+          "Id": "Install",
+          "Title": "Install game",
+          "Type": "Install",
+          "Command": "./scripts/junk-store.sh Jackett install"
+        },
+        {
+          "Id": "Download",
+          "Title": "Download game",
+          "Type": "Download",
+          "Command": "./scripts/junk-store.sh Jackett download"
+        },
+        {
+          "Id": "DownloadSaves",
+          "Title": "Download saves",
+          "Type": "DownloadSaves",
+          "Command": "./scripts/junk-store.sh Jackett download-saves"
+        },
+        {
+          "Id": "Repair",
+          "Title": "Repair game",
+          "Type": "Update",
+          "Command": "./scripts/junk-store.sh Jackett repair"
+        },
+	{
+          "Id": "Verify",
+          "Title": "Veirfy game",
+          "Type": "Verify",
+          "Command": "./scripts/junk-store.sh Jackett verify"
+        },
+        {
+          "Id": "Import",
+          "Title": "Import game",
+          "Type": "Import",
+          "Command": "./scripts/junk-store.sh Jackett import"
+        },
+        {
+          "Id": "Uninstall",
+          "Title": "Uninstall game",
+          "Type": "Uninstall",
+          "Command": "./scripts/junk-store.sh Jackett uninstall"
+        },
+        {
+          "Id": "Move",
+          "Title": "Move game",
+          "Type": "Move",
+          "Command": "./scripts/junk-store.sh Jackett move"
+        },
+        {
+          "Id": "ProtonTricks",
+          "Title": "Proton Tricks",
+          "Type": "Executable",
+          "Command": "./scripts/junk-store.sh Jackett protontricks"
+        },
+        {
+          "Id": "GetProgress",
+          "Title": "Get install progress",
+          "Type": "GetProgress",
+          "Command": "./scripts/junk-store.sh Jackett getprogress"
+        },
+        {
+          "Id": "CancelInstall",
+          "Title": "Cancel install",
+          "Type": "CancelInstall",
+          "Command": "./scripts/junk-store.sh Jackett cancelinstall"
+        },
+        {
+          "Id": "GetLoginActions",
+          "Title": "Get login status",
+          "Type": "Init",
+          "Command": "./scripts/get-json.py jackett-login-actions"
+        },
+        {
+          "Id": "GetLaunchOptions",
+          "Title": "Get launch options",
+          "Type": "GetLaunchOptions",
+          "Command": "./scripts/junk-store.sh Jackett getlaunchoptions"
+        },
+        {
+          "Id": "GetGameScriptActions",
+          "Title": "",
+          "Type": "ScriptActions",
+          "Command": "./scripts/get-json.py jackett-script-actions"
+        },
+        {
+          "Id": "GetScriptActions",
+          "Title": "",
+          "Type": "ScriptActions",
+          "Command": "./scripts/get-json.py jackett-script-actions"
+        },
+        {
+          "Id": "GetPlatformConfigFileActions",
+          "Title": "Get dosbox config file actions",
+          "Type": "Init",
+          "Command": "./scripts/get-json.py jackett-config-actions"
+        },
+        {
+          "Id": "GetTabConfigActions",
+          "Title": "Get jackett tab config file actions",
+          "Type": "Init",
 
+          "Command": "./scripts/get-json.py jackett-tab-config-actions"
+        },
+        {
+          "Id": "Refresh",
+          "Title": "Refresh Games List",
+          "Type": "Refresh",
+          "Command": "./scripts/junk-store.sh Jackett refresh"
+        }
+      ]
+    }
+  }
+}

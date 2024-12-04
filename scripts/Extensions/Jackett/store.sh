@@ -20,9 +20,6 @@ function Jackett_loginstatus(){
 	echo ""
 }
 
-function Jackett_refresh() {
-	echo ""
-}
 function Jackett_getgames(){
     get_steam_env
     SEARCH_RESULT="[]"

@@ -1,1 +1,40 @@
-
+{
+  "Sections": [
+    {
+      "Name": "Jackett",
+      "Visible": true,
+      "Description": "Settings specific to the Jackett",
+      "ModeLevel": 0,
+      "Options": [
+        {
+          "Key": "jackett_url",
+          "Label": "Jackett URL",
+          "Description": "Jackett Server URL in form of https://<ip_or_domain>",
+          "DefaultValue": "",
+          "Value": "",
+          "Type": "String",
+          "Min": 0,
+          "Max": 0,
+          "ModeLevel": 0,
+          "Parents": [],
+          "EnumValues": []
+        },
+        {
+          "Key": "jackett_api_key,
+          "Label": "Jackett API KEY",
+          "Description": "Jackett Server API Key",
+          "DefaultValue": "",
+          "Value": "",
+          "Type": "String",
+          "Min": 0,
+          "Max": 0,
+          "ModeLevel": 0,
+          "Parents": [],
+          "EnumValues": []
+        }
+      ]
+    }
+  ],
+  "Autoexec": "",
+  "AutoexecEnabled": false
+}

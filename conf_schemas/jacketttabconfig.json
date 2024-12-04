@@ -20,7 +20,7 @@
           "EnumValues": []
         },
         {
-          "Key": "jackett_api_key,
+          "Key": "jackett_api_key",
           "Label": "Jackett API KEY",
           "Description": "Jackett Server API Key",
           "DefaultValue": "",

@@ -20,6 +20,19 @@
           "EnumValues": []
         },
         {
+          "Key": "EmuDeckRomDirectory",
+          "Label": "EmuDeck Rom Directory",
+          "Description": "Where to search and store games",
+          "DefaultValue": "/home/deck/Emulation/roms/",
+          "Value": "",
+          "Type": "String",
+          "Min": 0,
+          "Max": 0,
+          "ModeLevel": 0,
+          "Parents": [],
+          "EnumValues": []
+        },
+        {
           "Key": "jackett_api_key",
           "Label": "Jackett API KEY",
           "Description": "Jackett Server API Key",

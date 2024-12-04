@@ -1,2 +1,2 @@
 # junk-store-jackettstore
-ROM provision EMUDECK via Jackett
+EMUDECK ROM provision via Jackett
